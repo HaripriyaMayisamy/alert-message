@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alert message</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0%;
+            box-sizing: border-box;
+            background-size: cover;
+            background-color: rgb(182, 216, 178);
+            background: url(img6.jpg);
+
+        }
+        #time{
+            justify-content: center;
+            font-size: 23px;font-family: 'Times New Roman', Times, serif;
+        }
+        .cointainer
+        {
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            font-size: 25px;                 
+        }
+        button{
+                height: 48px;
+                width: 70px;
+                box-shadow: -5px -5px 12px #d0e3ec,
+                              5px 5px 12px rgb(0,0, 0, 16);
+                border:50px;
+                border-radius: 0px;
+                margin: 5px;
+                font-size: 15px;
+            }
+            input{
+                height:50px;
+                width:200px;
+                border-radius: 0px;        
+                border: 5pxh;    
+                font-size: 5px;
+                margin-top: 30px;
+                margin-bottom: 30px;  
+            }
+
+    </style>
+</head>
+<body> 
+    <div class="cointainer">
+    Enter the time   :<br> <input type="text" id="time" style="display: flex;">  
+    <button onclick="submit()">Submit</button>
+    <script>
+        function submit() {
+            var time1 = document.getElementById("time").value.trim();
+            var time = parseInt(time1.split(":")[0], 10);
+            if (time < 12) {
+                alert("Good morning");
+            } else if (time >= 12 && time < 15) {
+                alert("Good afternoon");
+            } else if (time >= 15 && time < 18) {
+                alert("Good evening");
+            } else  if(time>=18 && time<=24){
+                alert("Good night");
+            }
+            else{
+                alert("Invalid time")
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>
